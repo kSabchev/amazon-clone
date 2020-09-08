@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 function Header() {
   return (
@@ -9,11 +9,12 @@ function Header() {
       <img
         className="header__logo"
         src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        alt=""
       />
 
       <div className="header__search">
         <input className="header__searchInput" type="text" />
-        <SearchIcon className="header__searchIcon"/>
+        <SearchIcon className="header__searchIcon" />
         {/*  logo */}
       </div>
 
@@ -33,13 +34,12 @@ function Header() {
         <span className="header__optionLineTwo">Prime</span>
       </div>
 
-      <div className="header__optionsBasket" >
+      <div className="header__optionsBasket">
         <ShoppingBasketIcon />
-        <span className="heaader__basketCount header__optionBasket">adss
-        </span>
-       </div>
-
+        <span className="heaader__basketCount header__optionBasket">adss</span>
+      </div>
     </div>
+    
   );
 }
 
