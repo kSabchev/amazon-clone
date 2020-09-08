@@ -20,8 +20,10 @@ function Home() {
                 </div>
 
                 <div className="home__row">
-                    <Product />
-                    <Product />
+                    <Product id="4903850" title="Samsung LC49RG90SSSSUXEN 49' Curved LED Gaming Monitor" price={199.99} rating={3}
+                    image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._ACC_SX466_.jpg"/>
+                    <Product id="23445930" title="Amaon Echo (3rd generation) Smart speaker with Alexaa, Charcoal Fabric" price={98.99} rating={5} 
+                    image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"/>
                     <Product />
                 </div>
 
