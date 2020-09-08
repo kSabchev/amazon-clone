@@ -51,11 +51,11 @@
 
 .header__optionLineOne{
     font-size: 10px;
-    font-weight: 800;
 }
 
 .header__optionLineTwo{
-    font-size: 8px;
+    font-size: 13px;
+    font-weight: 800;
 }
 
 .header__optionBasket {
