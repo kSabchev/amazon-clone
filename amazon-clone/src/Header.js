@@ -18,10 +18,13 @@ function Header() {
         />
       </Link>
 
+      {/* testing */}
+      <Link to="/Checkout">
       <div className="header__search">
         <input className="header__searchInput" type="text" />
         <SearchIcon className="header__searchIcon" />
       </div>
+      </Link>
 
       <div className="header__nav" />
       <div className="header__options">
