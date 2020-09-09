@@ -18,15 +18,23 @@ function Header() {
         />
       </Link>
 
-      {/* testing */}
-      <Link to="/Checkout">
       <div className="header__search">
         <input className="header__searchInput" type="text" />
+
         <SearchIcon className="header__searchIcon" />
       </div>
-      </Link>
 
       <div className="header__nav" />
+
+      {/*  TODO REMOVE */}
+      <Link to="/Checkout">
+      <img
+          className="header__logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSm2JP4-jfKIDOOBoO7H9FKlkrvJFFRJe2_GA&usqp=CAU"
+          alt=""
+        />
+      </Link>
+
       <div className="header__options">
         <span className="header__optionLineOne">Hello Guest</span>
         <span className="header__optionLineTwo">Sign in</span>
