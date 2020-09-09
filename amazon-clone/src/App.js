@@ -27,7 +27,7 @@ function App() {
         // the user is logged out
 
         dispatch({
-          type: "SET_UER",
+          type: "SET_USER",
           user: null,
         });
       }

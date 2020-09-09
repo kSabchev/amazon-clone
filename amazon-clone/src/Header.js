@@ -7,11 +7,15 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 
 function Header() {
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
+      dispatch({
+        type: "SET_UER",
+        user: null,
+      });
     }
   };
 
@@ -38,7 +42,7 @@ function Header() {
             Hello {user ? user.email : "Guest"}
           </span>
           <span className="header__optionLineTwo">
-            {user? "Sign Out" : "Sign in"}
+            {user ? "Sign Out" : "Sign in"}
           </span>
         </div>
       </Link>
