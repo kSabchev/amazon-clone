@@ -9,6 +9,8 @@ function Checkout() {
 
   return (
     <div className="checkout">
+
+      
       <div className="checkout__left">
         <img
           className="checkout__add"
