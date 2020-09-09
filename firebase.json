@@ -3,7 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "build",
+    "public": "amazon-clone/build",
     "ignore": [
       "firebase.json",
       "**/.*",
