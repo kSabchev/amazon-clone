@@ -28,7 +28,9 @@ function Home() {
                 </div>
 
                 <div className="home__row">
-                    <Product />
+                    <Product id="0000001" title="tango" price={90} rating={5} image="http://oyster.ignimgs.com/mediawiki/apis.ign.com/dota-2/3/38/Tango_lg.png"/>
+                    <Product id="0000002" title="salve" price={110} rating={5} image="https://dota2.gamepedia.com/media/dota2.gamepedia.com/thumb/f/fb/Ingame_model_Healing_Salve.png/120px-Ingame_model_Healing_Salve.png.jpeg?version=a81055a5373eb145f264feb0ff96298c"/>
+                    <Product id="0000003" title="clarity" price={50} rating={5} image="https://gamepedia.cursecdn.com/dota2_gamepedia/7/77/Clarity_icon.png?version=b71ce9fb1437edbfaf325674eca5a2ae"/>
                 </div>
             </div>
         </div>
