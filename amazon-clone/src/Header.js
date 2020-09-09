@@ -26,15 +26,6 @@ function Header() {
 
       <div className="header__nav" />
 
-      {/*  TODO REMOVE */}
-      <Link to="/Checkout">
-      <img
-          className="header__logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSm2JP4-jfKIDOOBoO7H9FKlkrvJFFRJe2_GA&usqp=CAU"
-          alt=""
-        />
-      </Link>
-
       <div className="header__options">
         <span className="header__optionLineOne">Hello Guest</span>
         <span className="header__optionLineTwo">Sign in</span>
@@ -50,12 +41,15 @@ function Header() {
         <span className="header__optionLineTwo">Prime</span>
       </div>
 
+      
+      <Link to="/Checkout">
       <div className="header__optionBasket">
         <ShoppingBasketIcon />
         <span className="header__optionLineTwo header__basketCount">
           {basket?.length}
         </span>
       </div>
+      </Link>
     </div>
   );
 }
