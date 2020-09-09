@@ -9,8 +9,6 @@ function Checkout() {
 
   return (
     <div className="checkout">
-
-      
       <div className="checkout__left">
         <img
           className="checkout__add"
@@ -21,16 +19,15 @@ function Checkout() {
         <div>
           <h2 className="checkout__title">Your shopping Basket </h2>
 
-          {basket.map(item => (
+          {basket.map((item) => (
             <CheckoutProduct
-            id={item.id}
-            title={item.title}
-            image={item.image}
-            rating={item.rating}
-            price={item.price}
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              rating={item.rating}
+              price={item.price}
             />
-          ))
-          }
+          ))}
           {/* CheckoutProduct*/}
         </div>
       </div>
