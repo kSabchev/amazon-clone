@@ -3,16 +3,16 @@ import "./Product.css";
 import { useStateValue } from "./StateProvider";
 
 function Product({ id, title, image, price, rating }) {
-  const [{basket} , dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
-  const addToBasket = () =>{
+  const addToBasket = () => {
     //dispatch the item into the data layer
 
     //console.log("this is the basket >>>", basket)
 
     dispatch({
-      type: 'ADD_TO_BASKET',
-      item: { 
+      type: "ADD_TO_BASKET",
+      item: {
         id: id,
         title: title,
         image: image,
@@ -34,7 +34,10 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p> <span role="img">⭐</span></p>
+              <p>
+                {" "}
+                <span role="img">⭐</span>
+              </p>
             ))}
         </div>
       </div>
