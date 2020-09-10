@@ -8,6 +8,7 @@ import { useElements, CardElement, useStripe } from "@stripe/react-stripe-js";
 import { getBasketTotal } from "./reducer";
 import CurrencyFormat from "react-currency-format";
 import axios from "axios";
+import { db } from "./firebase";
 
 function Payment() {
   const history = useHistory();
@@ -32,13 +33,16 @@ function Payment() {
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
-        // Stripe expects the total in a currencies subUnit
+        // Stripe expects the tqotal in a currencies subUnit
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
+
     };
     getClientSecret();
   }, [basket]);
+
+  console.log("THE SECRET IS >>>>", clientSecret);
 
   const handleSubmit = async (event) => {
     // do all the fancy stripe stuff...
@@ -53,9 +57,25 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = response.paymentIntent = payment information
+
+        // push into db
+        db.collection("users")
+          .doc(user?.id)
+          .collection("orders")
+          .doc(paymentIntent.uid)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
 
         history.replace("/orders");
       });
@@ -110,13 +130,13 @@ function Payment() {
           </div>
           <div className="payment__details">
             {/* Stripe magic =? */}
-            <form onSubmit="handleSubmit">
-              <CardElement onChange="handleChange" />
+            <form onSubmit={handleSubmit}>
+              <CardElement onChange={handleChange} />
               <div className="payment__priceContainer">
                 <CurrencyFormat
                   renderText={(value) => <h3>Order Total: {value}</h3>}
                   decimalScale={2}
-                  valueq={getBasketTotal(basket)}
+                  value={getBasketTotal(basket)}
                   displayType={"text"}
                   thousandSeparator={true}
                   prefix={"$"}
